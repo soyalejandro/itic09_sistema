@@ -1,6 +1,6 @@
 		<div class="copyright">
-			@ 2019 Perez Briseño | <a href="">SISTEMAS</a>
+		SYSTEM TIME ATTENDANCE  | <a href="">SYSTAtt</a>
 		</div>
 		<div class="information">
-			Politicas y privacidad | <a href="">SISTEMAS</a>
+			ALEJANDRO ALVAREZ | <a href="">ITIC'S_09</a>
 		</div>	

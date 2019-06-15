@@ -1,6 +1,6 @@
 /*-------------Inicio Selecciona color-------------*/
 :root {
-	--colorPrimario  : #2f3542;
+	--colorPrimario  : rgb(190, 75, 8);
 	--colorSecundario: #a4b0be;
 	--colorTerciario : #fff;
 }
