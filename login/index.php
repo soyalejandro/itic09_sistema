@@ -41,7 +41,7 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-md-12">
-												<input id="chkContra"  onchange='evaluarCheck(this.value)' data-on="Si" data-off="No" type="checkbox" checked data-toggle="toggle" data-size="mini" value='no'><label class="colorLetra"> &nbsp; Cambiar Contraseña</label>
+								<input id="chkContra"  onchange='evaluarCheck(this.value)' data-on="Si" data-off="No" type="checkbox" checked data-toggle="toggle" data-size="mini" value='no'><label class="colorLetra"> &nbsp; Cambiar Contraseña</label>
 		              			<button type="submit" class="btn btn-login  btn-flat  pull-right" id="btnIngresar">
 			              			<i class="fas fa-lock-open"></i>
 			              			Ingresar
@@ -66,14 +66,14 @@
 						<div class="col-md-12">
 							<label for="" class="colorLetra">Contraseña:</label>
 					          <div class="form-group has-feedback salto">
-					            <input type="password" id="vContra1"  class="form-control "  onKeyup="Validar();">
+					            <input type="password" id="vContra1"  class="form-control "  onKeyup="verificar_pass()">
 					            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 					          </div>
 						</div>
 						<div class="col-md-12">
 							<label for="" class="colorLetra">Verificar Contraseña:</label>
 					          <div class="form-group has-feedback salto">
-					            <input type="password" id="vContra2"  class="form-control " onKeyup="Validar();" >
+					            <input type="password" id="vContra2"  class="form-control " onKeyup="verificar_pass()" >
 					            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 					          </div>
 						</div>
@@ -110,7 +110,59 @@
     <script src="funciones.js"></script>
     <script src="../js/menu.js"></script>
     <script src="../js/precarga.js"></script>
+	<script>
+	window.onload = function() {
+		$("#cuerpo").fadeIn("slow");
+		$("#username").focus();
+	};	
+	$('#chkContra').bootstrapToggle('off');
+	$('#chkContra').val('no');
+	function verificar_pass(){
+		var pass1 = $('#vContra1').val();
+		var pass2 = $('#vContra2').val();
 
+		if(pass1.trim() != "" && pass2.trim() !=""){
+			if(pass1 == pass2){
+				$('#btnActualizar').removeAttr('disabled');
+			}else{
+				$('#btnActualizar').attr('disabled', 'disabled');
+			}
+		}else{
+			$('#btnActualizar').attr('disabled', 'disabled');
+		}
+	}
+
+	$('#btnActualizar').click(function(){
+		usuario  = $('#usuario').val();
+		vContra1 = $('#vContra1').val();
+		$.ajax({
+	        url:"actualizar_pass.php",
+	        type:"POST",
+	        dateType:"html",
+	        data: {'vContra1':vContra1,'usuario':usuario},
+	        success:function(respuesta){
+	        	if(respuesta == "ok"){
+	        		alertify.set('notifier','position', 'bottom-right');
+	        		alertify.success('Se ha actualizado la contraseña' );
+	        		preCarga(2000,2);
+                    setInterval(entrando, 2000);
+	        	}else{
+	        		alertify.set('notifier','position', 'bottom-right');
+	        		alertify.error('La Contraseña es igual a la anterior' );
+	        	}
+	        // llenarLista();
+	        },
+	        error:function(xhr,status){
+	            alert(xhr);
+	        },
+
+	    });
+	    return false;
+	});
+	function entrando(){
+	    window.location='../inicio/index.php';
+	}
+	</script>
 		<script>
 		window.onload = function() {
 			$("#cuerpo").fadeIn("slow");
