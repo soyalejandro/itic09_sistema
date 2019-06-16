@@ -17,7 +17,11 @@
 							<a href="../mUsuarios/index.php"><i class="fas fa-user"></i> Usuarios</a>
 						</li>
 						<li class="list-unstyled">
+							<a href="../mFotografia/index.php"><i class="far fa-file-image"></i> Fotografía </a>
+						</li >
+						<li class="list-unstyled">
 							<a href="#" onclick="salir();"><i class="fas fa-sign-out-alt"></i> Salir</a>
 						</li>
+
 					</ul>
 				</div>
