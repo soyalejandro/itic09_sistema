@@ -40,13 +40,17 @@
 					</div>
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-md-12">
-								<input id="chkContra"  onchange='evaluarCheck(this.value)' data-on="Si" data-off="No" type="checkbox" checked data-toggle="toggle" data-size="mini" value='no'><label class="colorLetra"> &nbsp; Cambiar Contraseña</label>
-		              			<button type="submit" class="btn btn-login  btn-flat  pull-right" id="btnIngresar">
+							  <div class="col-md-12">
+									<input id="chkContra"  onchange='evaluarCheck(this.value)' data-on="Si" data-off="No" type="checkbox" checked data-toggle="toggle" data-size="mini" value='no'><label class="colorLetra"> &nbsp; Cambiar Contraseña</label>
+									<a class="btn btn-login btn-flat " id="btnRegistrar" onclick="mostrar()">
+									<i class="fas fa-address-card"></i> Registrar Entrada</a>
+									&nbsp;
+	              					<button type="submit" class="btn btn-login  btn-flat  pull-right" id="btnIngresar">
 			              			<i class="fas fa-lock-open"></i>
 			              			Ingresar
 		              			</button>
 	              			</div>
+							
 	            		</div><!-- /.col -->
 					</div>
 				</form>
