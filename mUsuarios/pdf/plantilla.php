@@ -9,12 +9,11 @@
 		function header()
 		{
 			$this->Cell(30);
-			$this->Image('images/logotipo.png', 13, 9, 22);
+			$this->Image('images/logotipo.png', 15, 10, 25);
 			$this->SetFont('Arial', 'B', 15);
 			$this->Cell(30);
 			$this->SetX(100);
-			$this->Cell(100, 10, 'Reporte de Personas', 8,0,'C');
-
+			$this->Cell(100, 10, 'Reporte de Usuarios', 1,0,'C');
 			$this->Ln(20);
 
 		}

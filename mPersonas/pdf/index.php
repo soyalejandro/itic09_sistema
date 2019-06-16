@@ -10,7 +10,7 @@ $consulta=mysql_query("SELECT
               direccion
               
             FROM
-              personas WHERE tipo_persona = 'Trabajador'",$conexion) or die (mysql_error());
+              personas ",$conexion) or die (mysql_error());
 
 	// $resultado = mysqli_query($conexion, $consulta);
   $i = 1;
@@ -19,7 +19,7 @@ $consulta=mysql_query("SELECT
   $pdf->AliasNbPages();
   $pdf->AddPage();
 
-  $pdf->SetFillColor(56,199,244);
+  $pdf->SetFillColor(190, 75, 8);
   $pdf->SetFont('Arial', 'B', 12);
   $pdf->Cell(2,6);
   $pdf->Cell(75, 6, 'Nombre', 1, 0, 'C', 1);
