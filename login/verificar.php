@@ -41,14 +41,14 @@ $contraMD5 = md5($contra);
     }
 
     echo $contador;
-
+    date_default_timezone_set('America/Monterrey');
     session_name("loginUsuario"); 
     // inicio la sesión 
     session_start(); 
     //defino la sesión que demuestra que el usuario estó autorizado 
     $_SESSION["autentificado"]= "SI"; 
     //defino la fecha y hora de inicio de sesión en formato aaaa-mm-dd hh:mm:ss 
-    $_SESSION["ultimoAcceso"]= date("Y-n-j H:i:s"); 
+    $_SESSION["ultimoAcceso"]= date("Y-m-d h:i:s"); 
 	
 	//Defino variables de session restantes
     $_SESSION["nCompleto"]= $row[6]; //Nombre de completo de la persona

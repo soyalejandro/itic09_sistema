@@ -19,7 +19,7 @@
 	<div class="container" style="display:none" id="cuerpo">
 		<div class="row justify-content-md-center">
 			<div class="col-md-auto login-box borde sombra">
-				<h3 class="text-center titulo">Iniciar Sesión</h3>
+			<h3 class="text-center titulo">Iniciar Sesión En System Timen Attence (SYSTAtt)</h3>	
 				<hr>
 				<form id="frmIngreso">
 					<div class="form-row">
@@ -40,17 +40,88 @@
 					</div>
 					<div class="container-fluid">
 						<div class="row">
-							  <div class="col-md-12">
-									<input id="chkContra"  onchange='evaluarCheck(this.value)' data-on="Si" data-off="No" type="checkbox" checked data-toggle="toggle" data-size="mini" value='no'><label class="colorLetra"> &nbsp; Cambiar Contraseña</label>
-									<a class="btn btn-login btn-flat " id="btnRegistrar" onclick="mostrar()">
-									<i class="fas fa-address-card"></i> Registrar Entrada</a>
-									&nbsp;
-	              					<button type="submit" class="btn btn-login  btn-flat  pull-right" id="btnIngresar">
+							<div class="col-md-2">
+							<button type="button" class="btn btn-default center-block" id="btnReg" onclick="verRegistros();">
+								<i class="fa fa-users"></i>
+								Registros
+							</button>
+		          </div>	
+							<div class="col-md-8">
+								<center>
+									<input id="chkContra"  onchange='evaluarCheck(this.value)' data-on="Si" data-off="No" type="checkbox" checked data-toggle="toggle" data-size="mini" value='no'><label class="colorLetra"> &nbsp; Cambiar Contraseña</label>	
+								</center>
+							</div>			
+		              		<div class="col-md-2">
+		              			<button type="submit" class="btn btn-login  btn-flat  pull-right" id="btnIngresar">
 			              			<i class="fas fa-lock-open"></i>
 			              			Ingresar
 		              			</button>
-	              			</div>
+		              		</div>
+	              			
+	            	 </div><!-- /.col -->
+					</div>
+				</form>
+			</div>			
+		</div>
+	</div>
+
+	<div class="container" style="display:none" id="registros">
+		<div class="row justify-content-md-center">
+			<div class="col-md-auto login-box borde sombra">
+				
+				<h3 class="text-center titulo">Registros de entrada y salida</h3>
+				<hr>
+				<form id="frmAcceso">
+					<div class="form-row">
+						<div class="col-md-12">
+						
+						<div class="col-md-12">
 							
+							<center>
+								<label for="" class="colorLetra">Matricula:</label>
+						          <div class="form-group has-feedback salto">
+						            <input type="text" id="noControl"  class="form-control"  onkeyup="llenar_matricula();">
+						          </div>
+							</center>
+							<!-- <button type="submit" class="btn btn-login  btn-flat  pull-right" id="btnValidar">Validar</button> -->
+						</div>
+						<div class="col-md-12" >
+							
+							  <center>
+					            <img id="imagen" style="width: 130px;height: 150px;" alt="" class="center">
+								</center>
+					          
+
+										
+						</div>
+						<div class="col-md-12" >
+							<input type="hidden" id="alumno" class="form-control">
+							<center><label for="" class="colorLetra">Alumno:</label></center>
+					          			<div class="col-md-12" >
+										<center><input type="text" class="center form-control salto" id="persona" disabled></center>	
+										</div>
+										<div class="col-md-3">
+										</div>
+										<div class="col-md-12" id="texto">
+											<input type="hidden" id="regcarrera" class="form-control">
+											<center><label for="" class="colorLetra">Carrera:</label></center>
+											<input type="text" id="nomCarrera" class="form-control salto" disabled="">
+										</div>
+						</div>
+						<button type="button" id="btnVolver" class="btn btn-login btn-flat" pull-left onclick="Volver();">Regresar al login </button>
+					</div>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12">
+											<!-- 	<button type="submit" class="btn btn-login  btn-flat  pull-left" id="btnEntrada">
+			              			<i class="fas fa-times"></i>
+			              			Entrar
+		              			</button>
+		              			<button type="submit" class="btn btn-login  btn-flat  pull-right" id="btnSalida" disabled>
+			              			<i class="fas fa-lock-open"></i>
+			              			Salir
+		              			</button> -->
+	              			</div>
 	            		</div><!-- /.col -->
 					</div>
 				</form>
@@ -70,14 +141,14 @@
 						<div class="col-md-12">
 							<label for="" class="colorLetra">Contraseña:</label>
 					          <div class="form-group has-feedback salto">
-					            <input type="password" id="vContra1"  class="form-control "  onKeyup="verificar_pass()">
+					            <input type="password" id="vContra1"  class="form-control " onKeyup="Validar();">
 					            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 					          </div>
 						</div>
 						<div class="col-md-12">
 							<label for="" class="colorLetra">Verificar Contraseña:</label>
 					          <div class="form-group has-feedback salto">
-					            <input type="password" id="vContra2"  class="form-control " onKeyup="verificar_pass()" >
+					            <input type="password" id="vContra2"  class="form-control" onKeyup="Validar();">
 					            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 					          </div>
 						</div>
@@ -85,7 +156,7 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-md-12">
-												<button type="button" class="btn btn-login  btn-flat  pull-left" id="btnCancelar" onclick="cancelar()">
+												<button type="button" class="btn btn-login  btn-flat  pull-left" id="btnCancelar"  onclick="cancelar()">
 			              			<i class="fas fa-times"></i>
 			              			Cancelar
 		              			</button>
@@ -100,7 +171,9 @@
 			</div>			
 		</div>
 	</div>
+
 	
+
 	<script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
 	<script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../plugins/Preloaders/jquery.preloaders.js"></script>
@@ -114,60 +187,11 @@
     <script src="funciones.js"></script>
     <script src="../js/menu.js"></script>
     <script src="../js/precarga.js"></script>
+<!--     <script src="../texto_audio/jquery-1.12.1.js"></script>
+    <script src="../texto_audio/responsivevoice.js"></script> -->
+    <!-- <script src="val/verificar.js"></script> -->
+
 	<script>
-	window.onload = function() {
-		$("#cuerpo").fadeIn("slow");
-		$("#username").focus();
-	};	
-	$('#chkContra').bootstrapToggle('off');
-	$('#chkContra').val('no');
-	function verificar_pass(){
-		var pass1 = $('#vContra1').val();
-		var pass2 = $('#vContra2').val();
-
-		if(pass1.trim() != "" && pass2.trim() !=""){
-			if(pass1 == pass2){
-				$('#btnActualizar').removeAttr('disabled');
-			}else{
-				$('#btnActualizar').attr('disabled', 'disabled');
-			}
-		}else{
-			$('#btnActualizar').attr('disabled', 'disabled');
-		}
-	}
-
-	$('#btnActualizar').click(function(){
-		usuario  = $('#usuario').val();
-		vContra1 = $('#vContra1').val();
-		$.ajax({
-	        url:"actualizar_pass.php",
-	        type:"POST",
-	        dateType:"html",
-	        data: {'vContra1':vContra1,'usuario':usuario},
-	        success:function(respuesta){
-	        	if(respuesta == "ok"){
-	        		alertify.set('notifier','position', 'bottom-right');
-	        		alertify.success('Se ha actualizado la contraseña' );
-	        		preCarga(2000,2);
-                    setInterval(entrando, 2000);
-	        	}else{
-	        		alertify.set('notifier','position', 'bottom-right');
-	        		alertify.error('La Contraseña es igual a la anterior' );
-	        	}
-	        // llenarLista();
-	        },
-	        error:function(xhr,status){
-	            alert(xhr);
-	        },
-
-	    });
-	    return false;
-	});
-	function entrando(){
-	    window.location='../inicio/index.php';
-	}
-	</script>
-		<script>
 		window.onload = function() {
 			$("#cuerpo").fadeIn("slow");
 			$("#username").focus();
@@ -177,7 +201,37 @@
 		$('#chkContra').val('no');
 
 	</script>
+<!-- <script>
 
+	function hablar(){
+	 		var textoAtraducir;
+
+	 		textoAtraducir=$("#persona").val();
+	 		if (textoAtraducir == '') {
+
+	 		} else {
+	 			responsiveVoice.speak(textoAtraducir + ' acaba de registrar una entrada',"Spanish Female");
+	 		}
+
+	 		 
+	 		// alert(textoAtraducir);
+	 	}
+</script> -->
+
+
+<script>
+	function ver(){
+		$("#cuerpo").hide();
+		alertify.success("Ver nuevo modal");
+	}
+</script>
+
+<script>
+	function Volver(){
+		$("#registros").hide();
+		$("#cuerpo").fadeIn("slow");
+	}
+</script>
 
 </body>
 </html>
