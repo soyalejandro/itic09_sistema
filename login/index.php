@@ -135,25 +135,28 @@
 						</div>
 					<div class="container-fluid">
 							<div class="row">
-								<div class="col-md-12" >
-								<input type="hidden" id="alumno" class="form-control">
-								<center><label for="" class="colorLetra">Alumno:</label></center>
-						          <div class="form-group has-feedback " rowspan="2">
-						            <img id="imagen" style="width: 130px;height: 150px;" alt="" class="pull-left">
-						          </div>
-											<div class="col-md-8" >
-												<input type="text" class="form-control salto" id="persona" disabled>
-												
-											</div>
-											<div class="col-md-3">
-											
-											</div>
-											<div class="col-md-8" id="texto">
-												<input type="hidden" id="regcarrera" class="form-control">
-												<label for="">Carrera</label>
-												<input type="text" id="nomCarrera" class="form-control salto" disabled="">
-											</div>
-								</div>
+							<div class="col-md-12" >
+							
+							<center>
+							  <img id="imagen" style="width: 130px;height: 150px;" alt="" class="center">
+							  </center>
+							
+									  
+					  		</div>
+							  <div class="col-md-12" >
+							<input type="hidden" id="alumno" class="form-control">
+							<center><label for="" class="colorLetra">Alumno:</label></center>
+					          			<div class="col-md-12" >
+										<center><input type="text" class="center form-control salto" id="persona" disabled></center>	
+										</div>
+										<div class="col-md-3">
+										</div>
+										<div class="col-md-12" id="texto">
+											<input type="hidden" id="regcarrera" class="form-control">
+											<center><label for="" class="colorLetra">Carrera:</label></center>
+											<input type="text" id="nomCarrera" class="form-control salto" disabled="">
+										</div>
+						</div>
 							</div>
 					</div>
 				</form>
